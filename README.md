@@ -18,10 +18,10 @@ Turn on any gpio pin as W1 power.
 ### W1Temp.setGpioData(*gpioPinNumber*)
 Set any gpio pin to use as W1 data channel (required root permissions).
 
-### W1Temp.getSensorsUids()
+### W1Temp.getSensorsUids(*w1DeviceFolderPath* _= '/sys/bus/w1/devices'_)
 Return Promise which returns list of available sensors uids, catch if fails.
 
-### W1Temp.getSensor(*sensorUid*, *enablePolling* _= true_)
+### W1Temp.getSensor(*sensorUid*, *enablePolling* _= true_, *w1DeviceFolderPath* _= '/sys/bus/w1/devices'_)
 Return Promise which returns sensor instance, catch if fails.
 The *enablePolling* argument controls whether the sensor will emit *change* events by monitoring the sensor value in the background. Defaults to enabled.
 
