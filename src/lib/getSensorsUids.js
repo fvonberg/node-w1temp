@@ -2,9 +2,9 @@ import fs from 'fs';
 import fileExistsWait from './fileExistsWait';
 import { SENSOR_UID_REGEXP } from './constants';
 
-export default function getSensorsUids() {
+export default function getSensorsUids(w1DeviceFolderPath = '/sys/bus/w1/devices') {
   return new Promise((resolve, reject) => {
-    const file = '/sys/bus/w1/devices/w1_bus_master1/w1_master_slaves';
+    const file = `${w1DeviceFolderPath}/w1_bus_master1/w1_master_slaves`;
 
     fileExistsWait(file)
       .then(() => {
