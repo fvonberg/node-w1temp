@@ -12,7 +12,7 @@ export default function getSensor(sensorUid, enablePolling = true,
 
       fileExistsWait(file)
         .then(() => {
-          const sensor = new Sensor(file, enablePolling);
+          const sensor = new Sensor(sensorUid, file, enablePolling);
           resolve(sensor);
         })
         .catch(() => {

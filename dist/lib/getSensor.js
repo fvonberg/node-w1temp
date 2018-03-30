@@ -28,7 +28,7 @@ function getSensor(sensorUid) {
       var file = w1DeviceFolderPath + '/' + sensorUid + '/w1_slave';
 
       (0, _fileExistsWait2.default)(file).then(function () {
-        var sensor = new _Sensor2.default(file, enablePolling);
+        var sensor = new _Sensor2.default(sensorUid, file, enablePolling);
         resolve(sensor);
       }).catch(function () {
         reject(new Error('Cant get sensor instance'));

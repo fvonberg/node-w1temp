@@ -23,13 +23,14 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Sensor = function (_EventEmitter) {
   _inherits(Sensor, _EventEmitter);
 
-  function Sensor(file) {
-    var enablePolling = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+  function Sensor(sensorUid, file) {
+    var enablePolling = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
 
     _classCallCheck(this, Sensor);
 
     var _this = _possibleConstructorReturn(this, (Sensor.__proto__ || Object.getPrototypeOf(Sensor)).call(this));
 
+    _this.sensorUid = sensorUid;
     _this.file = file;
     _this.lastTemp = false;
 

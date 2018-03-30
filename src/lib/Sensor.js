@@ -3,9 +3,10 @@ import { EventEmitter } from 'events';
 
 class Sensor extends EventEmitter {
 
-  constructor(file, enablePolling = true) {
+  constructor(sensorUid, file, enablePolling = true) {
     super();
 
+    this.sensorUid = sensorUid;
     this.file = file;
     this.lastTemp = false;
 

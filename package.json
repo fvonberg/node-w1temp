@@ -1,12 +1,13 @@
 {
   "name": "w1temp",
-  "version": "4.1.0",
+  "version": "4.2.0",
   "description": "Measure temperature through DS18B20 sensor connected to 1wire to Raspberry PI with node.js",
   "main": "dist/index.js",
   "scripts": {
     "lint": "eslint src",
     "compile": "babel src --out-dir dist",
-    "prepublish": "npm run lint && npm run compile"
+    "types": "cpx src/index.d.ts dist",
+    "prepublish": "npm run lint && npm run compile && npm run types"
   },
   "repository": {
     "type": "git",
@@ -29,8 +30,10 @@
     "gpio": "^0.2.7"
   },
   "devDependencies": {
+    "@types/node": "^9.6.1",
     "babel-cli": "^6.11.4",
     "babel-preset-es2015": "^6.13.2",
+    "cpx": "^1.5.0",
     "eslint": "^3.2.2",
     "eslint-config-airbnb-base": "^5.0.1",
     "eslint-plugin-import": "^1.12.0"
